@@ -1,25 +1,26 @@
 \documentclass[
-11pt, % The default document font size, options: 10pt, 11pt, 12pt
+11pt, %The default document font size, options: 10pt, 11pt, 12pt
 %codirector, % Uncomment to add a codirector to the title page
 ]{charter} 
 
 
 % El títulos de la memoria, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \ttitle
-\titulo{Título del proyecto} 
+\titulo{Scoring de riesgo crediticio: Beneficio en el uso de datos privados del buró frente al uso de datos públicos del BCRA} 
+
 
 % Nombre del posgrado, se usa en la carátula y se puede usar el cualquier lugar del documento con el comando \degreename
-\posgrado{Carrera de Especialización en Sistemas Embebidos} 
+%\posgrado{Carrera de Especialización en Sistemas Embebidos} 
 %\posgrado{Carrera de Especialización en Internet de las Cosas} 
-%\posgrado{Carrera de Especialización en Inteligencia Artificial}
+\posgrado{Carrera de Especialización en Inteligencia Artificial}
 %\posgrado{Maestría en Sistemas Embebidos} 
 %\posgrado{Maestría en Internet de las cosas}
 
 % Tu nombre, se puede usar el cualquier lugar del documento con el comando \authorname
 % IMPORTANTE: no omitir titulaciones ni tildación en los nombres, también se recomienda escribir los nombres completos (tal cual los tienen en su documento)
-\autor{Título y Nombre del autor}
+\autor{Ing. Andrés Montes de Oca}
 
 % El nombre del director y co-director, se puede usar el cualquier lugar del documento con el comando \supname y \cosupname y \pertesupname y \pertecosupname
-\director{Título y Nombre del director}
+\director{TBD}
 \pertenenciaDirector{pertenencia} 
 \codirector{} % para que aparezca en la portada se debe descomentar la opción codirector en los parámetros de documentclass
 \pertenenciaCoDirector{FIUBA}
@@ -28,9 +29,9 @@
 \cliente{Nombre del cliente}
 \empresaCliente{Empresa del cliente}
  
-\fechaINICIO{30 de abril de 2023}		%Fecha de inicio de la cursada de GdP \fechaInicioName
-\fechaFINALPlan{18 de junio de 2023} 	%Fecha de final de cursada de GdP
-\fechaFINALTrabajo{15 de mayo de 2024}	%Fecha de defensa pública del trabajo final
+\fechaINICIO{27 de abril de 2026}		%Fecha de inicio de la cursada de GdP \fechaInicioName
+\fechaFINALPlan{19 de junio de 2026} 	%Fecha de final de cursada de GdP
+\fechaFINALTrabajo{12 de junio de 2026}	%Fecha de defensa pública del trabajo final
 
 
 \begin{document}
@@ -85,7 +86,7 @@ Buenos Aires, \fechaInicioName
 
 \vspace{2cm}
 
-Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en \textcolor{red}{la implementación de un prototipo de un sistema de control de temperatura de una caldera industrial}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{600} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
+Por medio de la presente se acuerda con el \authorname\hspace{1px} que su Trabajo Final de la \degreename\hspace{1px} se titulará ``\ttitle'' y consistirá en {evaluar la mejora en la predicción de riesgo crediticio al integrar datos de un buró privado frente al uso exclusivo de datos públicos del BCRA}. El trabajo tendrá un presupuesto preliminar estimado de \textcolor{red}{XXX} horas y un costo estimado de \textcolor{red}{\$ XXX}, con fecha de inicio el \fechaInicioName\hspace{1px} y fecha de presentación pública el \fechaFinalName.
 
 Se adjunta a esta acta la planificación inicial.
 
@@ -106,144 +107,90 @@ Se adjunta a esta acta la planificación inicial.
 \section{1. Descripción técnica-conceptual del proyecto a realizar}
 \label{sec:descripcion}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-El objetivo es que el lector, en una o dos páginas, exponga de qué se trata el proyecto y cuáles son sus desafíos, cuál es la motivación para realizarlo y su importancia.
-
-Se debe introducir el contexto del proyecto, el estado del arte en la temática, describir la propuesta de valor, cuál es el problema que atiende y cuál es la solución que se propone. Se debe dar una descripción funcional de la solución que incluya un diagrama en bloques.
-
-Puede ser útil incluir en esta sección la respuesta a alguna de estas preguntas:
-
-\begin{itemize}
-	\item ¿Cuál es el contexto del proyecto, es un emprendimiento personal, un proyecto para una empresa, es parte del programa de vinculación con empresas del posgrado?
-	\item ¿Existen o aplican condiciones especiales al proyecto, financiamiento de algún programa público o privado, acuerdos de confidencialidad, acuerdos sobre la propiedad intelectual de los entregables u otros?
-	\item ¿Cómo se compara la solución propuesta con el estado del arte en el campo de aplicación? ¿En qué aspectos destaca?
-	\item ¿Ayuda a la explicación si se incluye un lienzo Canvas del Modelo de Negocio?
-	\item ¿En qué estado del ciclo de vida está la solución que se propone?
-	\item ¿Cuáles son las características del cliente (el adoptante de los entregables del proyecto) qué valora, qué necesita?
-	\item ¿Por dónde pasa la innovación?
-\end{itemize}
-
-La descripción técnica-conceptual \textbf{debe incluir al menos un diagrama en bloques del sistema} y descripción funcional de la solución propuesta.
-
-Las figuras se deben mencionar en el texto ANTES de que aparezcan con una frase como la siguiente: ``En la figura \ref{fig:diagBloques} se presenta el diagrama en bloques del sistema. Se observa que...''.  La regla es que las figuras nunca pueden ir antes de ser mencionadas en el texto, porque sino el lector no entiende por qué de pronto aparece una figura.
+% ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+En el ámbito de la gestión del riesgo crediticio, la correcta estimación de la probabilidad de default es un pilar fundamental para la sostenibilidad financiera. Tradicionalmente, los modelos de scoring han dependido de datos públicos y transaccionales, como los provistos por la Central de Deudores del Banco Central de la República Argentina (BCRA). Si bien estos datos ofrecen un panorama regulatorio del endeudamiento, suelen carecer de la granularidad necesaria sobre el comportamiento histórico de pago en el ecosistema financiero no regulado y comercial.
+El problema analítico central radica en determinar y cuantificar empíricamente si la integración de datos de comportamiento provenientes de burós de crédito privados aporta un valor predictivo incremental que justifique su costo de adquisición
+. El estado del arte en modelado predictivo indica que la utilización de algoritmos de ensamble (tales como Gradient Boosting o Random Forest) permite maximizar la capacidad de discriminación al capturar interacciones no lineales complejas entre estas múltiples fuentes de datos estructurados.
+La propuesta de valor de este proyecto consiste en desarrollar, entrenar y evaluar rigurosamente modelos de Machine Learning para la clasificación de riesgo, contrastando el desempeño de un modelo base (entrenado exclusivamente con variables públicas del BCRA) contra un modelo extendido (enriquecido con features privadas del buró). La validación metodológica de esta hipótesis se centrará en la evaluación del poder de separación poblacional en distintos segmentos de riesgo, priorizando métricas de discriminación avanzadas, fundamentalmente la mejora porcentual del estadístico Kolmogorov-Smirnov (KS) máximo.
 
 \begin{figure}[htpb]
 \centering 
-\includegraphics[width=.65\textwidth]{./Figuras/diagBloques.png}
+\includegraphics[width=.65\textwidth]{./Figuras/Modelado.png}
 \caption{Diagrama en bloques del sistema.}
 \label{fig:diagBloques}
 \end{figure}
 
 \vspace{25px}
 
-El tamaño del texto en TODAS las figuras debe ser adecuado \textbf{para que NO pase lo que ocurre en la figura \ref{fig:diagBloques}}, donde el lector debe esforzarse para poder leer el texto. 
-
-Los colores usados en el diagrama deben ser adecuados, tal que ayuden a comprender mejor el diagrama. Se recomienda evitar colores primarios (como rojo, verde o cyan) y usar la gama de colores pastel.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{2. Identificación y análisis de los interesados}
 \label{sec:interesados}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-\textbf{Nota importante:} borrar esto y todas las consignas en color rojo antes de entregar este documento). Esto se hace eliminando el par de comandos que forman el bloque consigna, \verb!\begin{consigna}{red}! y \verb!\end{consigna}{red}! del código. 
- 
-Es inusual que una misma persona esté en más de un rol, incluso en proyectos chicos. Si se considera que una persona cumple dos o más roles, entonces \textbf{solo dejarla en el rol más importante}. 
-
-Por ejemplo, si una persona es Cliente pero también colabora u orienta, dejarla solo como Cliente. Si una persona es el Responsable, \textbf{no debe ser colocado también como miembro del equipo}.
-
+En el desarrollo de modelos predictivos de riesgo crediticio, la correcta identificación de los interesados resulta imperativa para garantizar que los requerimientos analíticos y las métricas de \textit{performance} se ajusten a la necesidad real del negocio. La propuesta de valor empírica de este proyecto exige una validación rigurosa por parte de los actores clave para contrastar el valor de la información de comportamiento del buró privado frente a los scores genéricos.
 
 \begin{table}[ht]
-%\caption{Identificación de los interesados}
-%\label{tab:interesados}
+\caption{Identificación de los interesados}
+\label{tab:interesados}
 \begin{tabularx}{\linewidth}{@{}|l|X|X|l|@{}}
 \hline
-\rowcolor[HTML]{C0C0C0} 
-Rol           & Nombre y Apellido & Organización 	& Puesto 	\\ \hline
-Auspiciante   &                   &              	&        	\\ \hline
-Cliente       & \clientename      &\empclientename	&        	\\ \hline
-Impulsor      &                   &              	&        	\\ \hline
-Responsable   & \authorname       & FIUBA        	& Alumno 	\\ \hline
-Colaboradores &                   &              	&        	\\ \hline
-Orientador    & \supname	      & \pertesupname 	& Director del Trabajo Final \\ \hline
-Equipo        & miembro1 \newline 
-				miembro2          &              	&        	\\ \hline
-Opositores    &                   &              	&        	\\ \hline
-Usuario final &                   &              	&        	\\ \hline
+\rowcolor[HTML]{C0C0C0}
+Rol & Nombre y Apellido & Organización & Puesto \\ \hline
+Cliente & John Doe & Nueva Compañía Financiera & Responsable de Riesgo \\ \hline
+Responsable & \authorname & FIUBA & Alumno \\ \hline
+Orientador & \supname & \pertesupname & Director del Trabajo Final \\ \hline
+Opositores & - & Nueva Compañía Financiera & Sector de Finanzas / Presupuesto \\ \hline
 \end{tabularx}
 \end{table}
 
-El Director suele ser uno de los orientadores.
+A continuación, se detallan las principales características y expectativas metodológicas de cada interesado clave con relación al proyecto:
 
-No dejar celdas vacías; si no hay nada que poner en una celda colocar un signo ``-''.
-
-No dejar filas vacías; si no hay nada que poner en una fila entonces eliminarla.
-
-Es deseable listar a continuación las principales características de cada interesado.
- 
-Por ejemplo:
 \begin{itemize}
-	\item Orientador: la Dra. Ing. María Gómez es experta en la temática y va a ayudar con la definición de los requerimientos y el desarrollo del firmware del embebido.
-	\item Auspiciante: es riguroso y exigente con la rendición de gastos. Tener mucho cuidado con esto.
-	\item Equipo: Juan Perez, suele pedir licencia porque tiene un familiar con una enfermedad. Planificar considerando esto.
+\item \textbf{Cliente (John Doe):} Es el responsable directo que aprobará los resultados y validará el entregable final. Su evaluación se centrará empíricamente en corroborar si el enriquecimiento algorítmico con datos privados aporta un incremento estadísticamente significativo en la métrica del estadístico Kolmogorov-Smirnov (KS), justificando su viabilidad comercial frente a modelos puramente transaccionales.
+\item \textbf{Responsable (\authorname):} Ejerce la autoridad operativa y analítica para gestionar el ciclo de vida del proyecto, abarcando desde la recolección e imputación de variables, hasta la calibración de los hiperparámetros de los algoritmos de ensamble y la contrastación rigurosa de las distribuciones poblacionales.
+\item \textbf{Orientador (\supname):} Como experto técnico, supervisará el rigor académico de la experimentación y el diseño algorítmico. Se encargará de asegurar la correcta partición de conjuntos de validación, previniendo sesgos o el sobreajuste (\textit{overfitting}) en la comparación de las fuentes públicas y privadas.
+\item \textbf{Opositores (Sector de Finanzas / Presupuesto):} Representan al grupo interno de la entidad cliente que prioriza la reducción de costos operativos a corto plazo. Su oposición radica en considerar el proyecto financieramente oneroso, prefiriendo la utilización exclusiva de datos públicos del BCRA (CENDEU) por ser económicamente más viables, aun asumiendo un detrimento en la \textit{performance} predictiva. El rigor de esta investigación deberá refutar empíricamente su postura, demostrando que la mejora en la capacidad de discriminación (medida a través del KS) compensa holgadamente el costo de adquisición de los datos de buró.
 \end{itemize}
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-
-¿Por qué se hace el proyecto? ¿Qué se quiere lograr? 
-
-Se recomienda que sea solo un párrafo que continúe con la idea de la frase ``el propósito de este proyecto es...'' (omitir la frase, ya que está en el título de la sección).
-\end{consigna}
+Desarrollar y validar empíricamente un modelo predictivo de aprendizaje automático que cuantifique el valor analítico incremental de integrar datos de comportamiento provenientes de un buró de crédito privado frente a la utilización exclusiva de información pública transaccional del BCRA. Este esfuerzo metodológico busca optimizar las políticas de otorgamiento de crédito al maximizar la capacidad de discriminación poblacional, evaluada rigurosamente mediante el estadístico Kolmogorov-Smirnov (KS), proporcionando así la evidencia cuantitativa y objetiva necesaria para justificar económicamente la adquisición de fuentes de datos externas frente a las alternativas genéricas de bajo costo.
 
 \section{4. Alcance del proyecto}
 \label{sec:alcance}
 
-\begin{consigna}{red}
-¿Qué se incluye y que no se incluye en este proyecto?
+El presente proyecto se circunscribe empíricamente al desarrollo, calibración y validación \textit{offline} de modelos predictivos de riesgo crediticio. El esfuerzo analítico se concentrará en cuantificar la mejora de la capacidad de discriminación poblacional, evaluada rigurosamente mediante el estadístico Kolmogorov-Smirnov (KS), al integrar fuentes del buró privado frente a los datos públicos del BCRA.
 
-Se refiere al trabajo que se va a hacer para entregar el producto o resultado especificado. 
-
-Explicitar todo lo quede comprendido dentro del alcance del proyecto. Por ejemplo:
-
-El proyecto incluye:
+\textbf{El proyecto incluye taxativamente:}
 \begin{itemize}
-	\item Ítem 1.
-	\item Ítem 2.
-		\begin{itemize}
-		\item Subítem 1.
-		\item Subítem 2.
-		\item ...
-		\end{itemize}
-	\item ...
-	
+\item Extracción, depuración y análisis exploratorio exhaustivo de las bases de datos transaccionales públicas (CENDEU) y del buró de crédito privado.
+\item Transformación de variables, imputación de valores faltantes e ingeniería de características (\textit{feature engineering}) orientada a capturar el comportamiento financiero.
+\item Entrenamiento, optimización de hiperparámetros y validación cruzada utilizando algoritmos de ensamble predictivo.
+\item Evaluación metodológica y comparativa del desempeño predictivo entre el modelo base (datos públicos) y el modelo enriquecido (datos privados) segmentando por perfiles de riesgo.
+\item Estructuración de los métodos de transformación y modelos de forma tal que sean capaces de ser ejecutados en modalidad \textit{batch} sobre un conjunto de usuarios.
 \end{itemize}
 
-Explicitar además todo lo que no quede incluido (``El presente proyecto no incluye...'')
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
+\textbf{El proyecto no incluye:}
+\begin{itemize}
+\item El despliegue o integración (\textit{deployment}) de los modelos algorítmicos en la arquitectura de servidores de producción de la entidad financiera.
+\item El desarrollo de una interfaz gráfica de usuario (GUI) o cuadros de mando interactivos para el usuario final.
+\item La ejecución del modelo predictivo de clasificación de riesgo en tiempo real (\textit{real-time scoring}).
+\item La adquisición o integración de bases de datos de fuentes externas adicionales a las ya provistas para el estudio.
+\end{itemize}
 
 
 \section{5. Supuestos del proyecto}
 \label{sec:supuestos}
 
-\begin{consigna}{red} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
-``Para el desarrollo del presente proyecto se supone que: ...''
-
+Para el desarrollo del presente proyecto de investigación empírica se supone que:
 \begin{itemize}
-	\item Supuesto 1.
-	\item Supuesto 2.
-	\item ...
+\item Se dispondrá de acceso irrestricto, oportuno y continuo a las bases de datos históricas (tanto transaccionales públicas del CENDEU como de comportamiento del buró privado), asumiendo que las mismas poseen la profundidad temporal necesaria para capturar la ciclicidad del riesgo crediticio.
+\item Existe una relación matemática subyacente y capturable algorítmicamente entre las variables predictivas históricas seleccionadas y la probabilidad empírica de \textit{default} de los perfiles analizados.
+\item Se contará con la infraestructura computacional adecuada (entornos de procesamiento distribuido o máquinas virtuales de alta capacidad) para entrenar, validar y optimizar los hiperparámetros de algoritmos de ensamble complejos sin enfrentar cuellos de botella de memoria.
+\item El entorno macroeconómico y el marco normativo del BCRA mantendrán un nivel de estabilidad razonable durante el período de estudio, garantizando que alteraciones exógenas extremas no distorsionen la evaluación comparativa del estadístico Kolmogorov-Smirnov (KS).
+\item Se dispondrá del tiempo estipulado en la planificación y la continuidad operativa del Responsable del proyecto para abarcar todas las fases metodológicas del ciclo de vida de los datos, desde la depuración hasta la evaluación final del poder de separación poblacional.
 \end{itemize}
-
-Por ejemplo, se podrían incluir supuestos respecto a disponibilidad de tiempo y recursos humanos y materiales, sobre la factibilidad técnica de distintos aspectos del proyecto, sobre otras cuestiones que sean necesarias para el éxito del proyecto como condiciones macroeconómicas o reglamentarias.
-
-\end{consigna} % ELIMINAR \begin{consigna}{red} y \end{consigna}{red} en las secciones que vayan completando para cada entrega parcial.
 
 \section{6. Requerimientos}
 \label{sec:requerimientos}
