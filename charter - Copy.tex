@@ -119,6 +119,11 @@ La propuesta de valor de este proyecto consiste en desarrollar, entrenar y evalu
 \vspace{25px}
 
 
+\section{Identificación y análisis de los interesados}
+\label{sec:interesados}
+
+En el desarrollo de modelos predictivos de riesgo crediticio, la correcta identificación de los interesados resulta imperativa para garantizar que los requerimientos analíticos y las métricas de \textit{performance} se ajusten a la necesidad real del negocio. La propuesta de valor empírica de este proyecto exige una validación rigurosa por parte de los actores clave para contrastar el valor de la información de comportamiento del buró privado frente a los scores genéricos.
+
 \begin{table}[H]
 \caption{Identificación de los interesados}
 \label{tab:interesados}
@@ -127,14 +132,20 @@ La propuesta de valor de este proyecto consiste en desarrollar, entrenar y evalu
 \rowcolor[HTML]{C0C0C0}
 Rol & Nombre y Apellido & Organización & Puesto \\ \hline
 Cliente & John Doe & Nueva Compañía Financiera & Responsable de Riesgo \\ \hline
-Cliente Opositor & José Finanzas & Nueva Compañía Financiera & Responsable de Finanzas \\ \hline
-Seguridad & Pepe Governance & Nueva Compañía Financiera & Responsable de Gobernanza de Datos \\ \hline
-Responsable & \authorname & FIUBA & Científico de Datos \\ \hline
+Responsable & \authorname & FIUBA & Alumno \\ \hline
 Orientador & \supname & \pertesupname & Director del Trabajo Final \\ \hline
-Codirector & \cosupname & \pertecosupname & Codirector del Trabajo Final \\ \hline
-
+Opositores & - & Nueva Compañía Financiera & Sector de Finanzas / Presupuesto \\ \hline
 \end{tabularx}
 \end{table}
+
+A continuación, se detallan las principales características y expectativas metodológicas de cada interesado clave con relación al proyecto:
+
+\begin{itemize}
+\item \textbf{Cliente (John Doe):} Es el responsable directo que aprobará los resultados y validará el entregable final. Su evaluación se centrará empíricamente en corroborar si el enriquecimiento algorítmico con datos privados aporta un incremento estadísticamente significativo en la métrica del estadístico Kolmogorov-Smirnov (KS), justificando su viabilidad comercial frente a modelos puramente transaccionales.
+\item \textbf{Responsable (\authorname):} Ejerce la autoridad operativa y analítica para gestionar el ciclo de vida del proyecto, abarcando desde la recolección e imputación de variables, hasta la calibración de los hiperparámetros de los algoritmos de ensamble y la contrastación rigurosa de las distribuciones poblacionales.
+\item \textbf{Orientador (\supname):} Como experto técnico, supervisará el rigor académico de la experimentación y el diseño algorítmico. Se encargará de asegurar la correcta partición de conjuntos de validación, previniendo sesgos o el sobreajuste (\textit{overfitting}) en la comparación de las fuentes públicas y privadas.
+\item \textbf{Opositores (Sector de Finanzas / Presupuesto):} Representan al grupo interno de la entidad cliente que prioriza la reducción de costos operativos a corto plazo. Su oposición radica en considerar el proyecto financieramente oneroso, prefiriendo la utilización exclusiva de datos públicos del BCRA (CENDEU) por ser económicamente más viables, aun asumiendo un detrimento en la \textit{performance} predictiva. El rigor de esta investigación deberá refutar empíricamente su postura, demostrando que la mejora en la capacidad de discriminación (medida a través del KS) compensa holgadamente el costo de adquisición de los datos de buró.
+\end{itemize}
 
 \section{3. Propósito del proyecto}
 \label{sec:proposito}
@@ -249,7 +260,7 @@ El puntaje final de cada historia de usuario será calculado como el número de 
     \item Como Analista de Riesgos quiero calcular el Índice de Estabilidad Poblacional (PSI) de las variables estructuradas del buró privado para garantizar que las distribuciones no sufran deriva de datos (\textit{Data Drift}) temporal frente a la muestra base, asegurando la robustez y vigencia del modelo. (3+5+1 = 9 $\rightarrow$ 13 puntos)
 \end{enumerate}
 
-\textbf{Rol: Analista de Finanzas}
+\textbf{Rol: Sector de Finanzas}
 \begin{enumerate}\setcounter{enumi}{5}
     \item Como Analista del Sector de Finanzas quiero evaluar las predicciones del modelo híbrido para aumentar la cantidad de usuarios aprobados manteniendo el mismo porcentaje de malos pagadores de la cartera actual (\textit{estrategia de swap-in}), demostrando así la viabilidad comercial y operativa de la información externa. (3+5+1 = 9 $\rightarrow$ 13 puntos)
 \end{enumerate}
@@ -316,8 +327,6 @@ A continuación se detalla la Estructura de Desglose del Trabajo (EDT/WBS), dond
 
 \end{enumerate}
 
-
-\begin{consigna}{red}
 \section{10. Planificación de Sprints}
 
 Organizar las tareas técnicas del proyecto en sprints de trabajo que permitan distribuir de forma equilibrada la carga horaria total, estimada en 600 horas.
@@ -611,7 +620,7 @@ Sprint no técnico - 12 (por ej.: ``Defensa'') & Ensayos orales con feedback & C
 \hline
 \end{tabular}
 \end{table}
-\end{consigna}
+
 
 
 
